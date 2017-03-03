@@ -7,4 +7,4 @@ After login you are redirected to another component for internal navigation
 
 Image of the facebook configuration of the app
 
-![Facebook Config](http://www.awesomescreenshot.com/image/2253786/ceba8599f7eceb0fdd8b7bf882d83b73)
+![Facebook Config](http://www.awesomescreenshot.com/upload//222394/85a9bcd4-ae5e-4fe6-7254-0b71cc05a494.png)
