@@ -1,0 +1,14 @@
+<TabView #tabview [selectedIndex]="tabindex">
+    <StackLayout *tabItem="{title: 'Tab1'}" orientation="vertical">
+        <Label text="Tab 2"></Label>
+        <Button class="btn btn-outline" margin="5"
+                [nsRouterLink]="['/login']"
+                text="Go to login"></Button>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Tab2'}">
+        <Label text="Tab 2"></Label>
+        <Button class="btn btn-outline" margin="5"
+                [nsRouterLink]="['/login']"
+                text="Go to login"></Button>
+    </StackLayout>
+</TabView>
