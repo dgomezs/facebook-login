@@ -3,6 +3,7 @@ import {platformNativeScriptDynamic} from "nativescript-angular/platform";
 import * as SocialLogin from "nativescript-social-login";
 import * as Application from "application";
 import {AppModule} from "./app.module";
+require("nativescript-localstorage");
 
 
 if (Application.android) {
@@ -11,6 +12,10 @@ if (Application.android) {
             activity: activity
         });
     }
+
+    SocialLogin.addLogger(function (msg: any, tag: string) {
+        console.log('[nativescript-social-login]: (' + tag + '): ' + msg);
+    });
 }
 
 platformNativeScriptDynamic().bootstrapModule(AppModule);

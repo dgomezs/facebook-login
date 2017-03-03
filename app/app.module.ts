@@ -4,6 +4,7 @@ import {AppRoutingModule} from "./app.routing";
 import {AppComponent} from "./app.component";
 import {LoginComponent} from "./login/login.component";
 import {NavComponent} from "./nav/nav.component";
+import {AuthGuard} from "./auth.guard";
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import {NavComponent} from "./nav/nav.component";
         LoginComponent,
         NavComponent
     ],
-    providers: [],
+    providers: [AuthGuard],
     schemas: [
         NO_ERRORS_SCHEMA
     ]

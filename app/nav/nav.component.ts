@@ -13,7 +13,7 @@ export class NavComponent implements OnInit {
 
     private tabindex: number;
 
-    constructor(private page: Page, private router: RouterExtensions) {
+    constructor(private page: Page) {
         this.tabindex = 0;
     }
 

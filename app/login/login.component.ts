@@ -4,6 +4,10 @@ import {Page} from "ui/page";
 import * as SocialLogin from "nativescript-social-login";
 import {ILoginResult} from "nativescript-social-login";
 import {RouterExtensions} from "nativescript-angular";
+import * as application from "application";
+
+declare var sessionStorage: any;
+
 
 @Component({
     selector: "login",
@@ -20,20 +24,20 @@ export class LoginComponent implements OnInit {
         this.page.actionBarHidden = true;
     }
 
-    facebookResult(result: ILoginResult): void {
-
-        this.router.navigate(["nav"]);
-    }
-
     loginWithFacebook(): void {
-        let self: any = this;
+
         SocialLogin.loginWithFacebook((result) => {
             if (result.authToken) {
-                console.log("result");
-                self.facebookResult(result);
-            } else {
-                console.log("init");
+                sessionStorage.setItem("AUTHENTICATED", true);
+                this.restartApp();
             }
         });
+    }
+
+    restartApp(): void {
+
+        const intent = new android.content.Intent(application.android.context, java.lang.Class.forName("com.tns.NativeScriptActivity"));
+        intent.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK);
+        application.android.foregroundActivity.startActivity(intent);
     }
 }

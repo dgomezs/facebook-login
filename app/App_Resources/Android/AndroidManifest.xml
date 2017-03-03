@@ -33,7 +33,9 @@
         <activity android:name="com.facebook.FacebookActivity"
                   android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
                   android:theme="@android:style/Theme.Translucent.NoTitleBar"
+                  android:noHistory="true"
                   android:label="@string/app_name"/>
+
         <!-- end facebook additional code -->
 
         <activity
